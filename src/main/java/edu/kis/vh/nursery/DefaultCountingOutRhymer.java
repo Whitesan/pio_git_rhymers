@@ -1,12 +1,14 @@
 package edu.kis.vh.nursery;
 
-public class defaultCountingOutRhymer {
-    public IntArrayStack stack;
-    public defaultCountingOutRhymer(IntArrayStack stack)
+import edu.kis.vh.nursery.list.IntArrayStack;
+
+public class DefaultCountingOutRhymer {
+    private IntArrayStack stack;
+    public DefaultCountingOutRhymer(IntArrayStack stack)
     {
         this.stack = stack;
     }
-    public defaultCountingOutRhymer(){
+    public DefaultCountingOutRhymer(){
         stack = new IntArrayStack();
     }
 
@@ -26,7 +28,7 @@ public class defaultCountingOutRhymer {
         return stack.isFull();
     }
 
-    protected int peekaboo() {
+    public int peekaboo() {
         return stack.peekaboo();
     }
 

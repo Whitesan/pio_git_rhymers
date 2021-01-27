@@ -3,7 +3,7 @@ package edu.kis.vh.nursery.list;
 /**
  * Linked list of Int
  */
-public class IntLinkedList {
+public class IntLinkedList implements IntStack{
 	/**
 	 * Error value
 	 */

@@ -8,13 +8,13 @@ class RhymersDemo {
 	public static void main(String[] args) {
 		RhymersFactory factory = new DefaultRhymersFactory();
 
-		defaultCountingOutRhymer[] rhymers = getDefaultCountingOutRhymers(factory);
+		DefaultCountingOutRhymer[] rhymers = getDefaultCountingOutRhymers(factory);
 		countInRhymers(rhymers);
 		displayRhymers(rhymers);
 
 	}
 
-	private static void displayRhymers(defaultCountingOutRhymer[] rhymers) {
+	private static void displayRhymers(DefaultCountingOutRhymer[] rhymers) {
 		for (int i = 0; i < rhymers.length; i++) {
 			while (!rhymers[i].callCheck())
 				System.out.print(rhymers[i].countOut() + "  ");
@@ -25,7 +25,7 @@ class RhymersDemo {
 				+ ((HanoiRhymer) rhymers[3]).reportRejected());
 	}
 
-	private static void countInRhymers(defaultCountingOutRhymer[] rhymers) {
+	private static void countInRhymers(DefaultCountingOutRhymer[] rhymers) {
 		for (int i = 1; i < 15; i++)
 			for (int j = 0; j < 3; j++)
 				rhymers[j].countIn(i);
@@ -35,8 +35,8 @@ class RhymersDemo {
 			rhymers[3].countIn(rn.nextInt(20));
 	}
 
-	private static defaultCountingOutRhymer[] getDefaultCountingOutRhymers(RhymersFactory factory) {
-		defaultCountingOutRhymer[] rhymers = { factory.GetStandardRhymer(), factory.GetFalseRhymer(),
+	private static DefaultCountingOutRhymer[] getDefaultCountingOutRhymers(RhymersFactory factory) {
+		DefaultCountingOutRhymer[] rhymers = { factory.GetStandardRhymer(), factory.GetFalseRhymer(),
 				factory.GetFIFORhymer(), factory.GetHanoiRhymer()};
 		return rhymers;
 	}

@@ -1,6 +1,8 @@
-package edu.kis.vh.nursery;
+package edu.kis.vh.nursery.list;
 
-public class IntArrayStack {
+import edu.kis.vh.nursery.list.IntStack;
+
+public class IntArrayStack implements IntStack {
     public final int INITIAL = -1;
     public final int MAX_SIZE = 12;
     public final int DEFAULT_VALUE = -1;
@@ -28,7 +30,7 @@ public class IntArrayStack {
         return total == MAX_SIZE - 1;
     }
 
-    protected int peekaboo() {
+    public int peekaboo() {
         if (callCheck())
             return DEFAULT_VALUE;
         return numbers[total];
